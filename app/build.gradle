@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.1"
+
+    defaultConfig {
+        applicationId "com.cultivator.codelibrary"
+        minSdkVersion 19
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+    }
+
+    signingConfigs {
+        release {
+            keyAlias 'key'
+            keyPassword '123456'
+            storeFile file('/Users/yb1026/Documents/git/mProjects/mykey.jks')
+            storePassword '123456'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles 'proguard-rules.pro'
+            debuggable false
+            signingConfig signingConfigs.release
+        }
+        debug{
+            debuggable true
+            signingConfig signingConfigs.release
+        }
+    }
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:support-v4:25.+'
+    compile 'com.android.support:appcompat-v7:25.+'
+    compile 'com.android.support:percent:25.+'
+    compile project(':zxing')
+    compile project(':draggridview')
+
+
+    //开源库
+    compile 'com.lzy.widget:imagepicker:0.2.5'
+    compile 'com.alibaba:fastjson:1.2.11'
+
+
+    //libs
+    compile files('libs/gson-2.2.1.jar')
+    compile files('libs/nohttp1.0.0.jar')
+    //百度定位
+    compile files('libs/BaiduLBS_Android.jar')
+   
+}

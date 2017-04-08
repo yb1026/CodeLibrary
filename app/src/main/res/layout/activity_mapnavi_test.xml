@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    >
+
+
+    <TextView
+        android:id="@+id/latitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="39.90960456049752"
+        android:gravity="center"
+        android:padding="15dp"
+        android:textColor="@color/color_6"
+        android:textSize="20sp"
+        android:layout_margin="10dp"/>
+
+
+
+    <TextView
+        android:id="@+id/longitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="116.3972282409668"
+        android:gravity="center"
+        android:padding="15dp"
+        android:textColor="@color/color_6"
+        android:textSize="20sp"
+        android:layout_margin="10dp"/>
+
+
+
+    <TextView
+        android:id="@+id/addr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="天安门1"
+        android:gravity="center"
+        android:padding="15dp"
+        android:textColor="@color/color_6"
+        android:textSize="20sp"
+        android:layout_margin="10dp"/>
+
+
+
+    <TextView
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/btn_bluebg_corner4dp"
+        android:text="地图apps"
+        android:gravity="center"
+        android:padding="15dp"
+        android:textColor="@color/color_6"
+        android:textSize="20sp"
+        android:layout_margin="10dp"/>
+</LinearLayout>
