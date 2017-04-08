@@ -43,6 +43,8 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.qrcode).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //去扫码
+            public void onClick(View view) {
                 startActivityForResult(new Intent(MainActivity.this, QRActivity.class), 0);
 
             }
