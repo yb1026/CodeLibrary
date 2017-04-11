@@ -10,3 +10,4 @@
 /build
 /captures
 /settings.gradle
+*.log
