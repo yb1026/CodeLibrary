@@ -8,9 +8,9 @@ import android.view.View.OnClickListener;
 
 import com.cultivator.codelibrary.R;
 import com.cultivator.codelibrary.base.BaseActivity;
-import com.cultivator.codelibrary.common.log.MyLog;
-import com.cultivator.codelibrary.common.util.sys.RingerUtil;
-import com.cultivator.codelibrary.common.util.sys.VibratorUtil;
+import com.cultivator.codelibrary.log.MyLog;
+import com.cultivator.codelibrary.util.sys.RingerUtil;
+import com.cultivator.codelibrary.util.sys.VibratorUtil;
 
 
 public class VibratorRingActivity extends BaseActivity {

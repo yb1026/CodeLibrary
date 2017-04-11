@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cultivator.codelibrary.R;
-import com.cultivator.codelibrary.common.util.Utils;
+import com.cultivator.codelibrary.util.Utils;
 
 
 /**

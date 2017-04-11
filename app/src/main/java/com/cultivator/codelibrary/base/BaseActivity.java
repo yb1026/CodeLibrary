@@ -3,7 +3,6 @@ package com.cultivator.codelibrary.base;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.os.Build;
 import android.os.Bundle;
@@ -12,18 +11,17 @@ import android.util.TypedValue;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
+import com.cultivator.codelibrary.MyApplication;
 import com.cultivator.codelibrary.R;
-import com.cultivator.codelibrary.common.MyApplication;
-import com.cultivator.codelibrary.common.dialog.SimpleProgressDialog;
-import com.cultivator.codelibrary.common.net.CallServer;
-import com.cultivator.codelibrary.common.net.ConnectionController;
-import com.cultivator.codelibrary.common.net.HttpListener;
-import com.cultivator.codelibrary.common.net.NetworkManager;
-import com.cultivator.codelibrary.common.net.model.BaseResp;
+import com.cultivator.codelibrary.widget.dialog.SimpleProgressDialog;
+import com.cultivator.codelibrary.net.CallServer;
+import com.cultivator.codelibrary.net.ConnectionController;
+import com.cultivator.codelibrary.net.HttpListener;
+import com.cultivator.codelibrary.net.NetworkManager;
+import com.cultivator.codelibrary.net.model.BaseResp;
 
 
 /**
@@ -53,6 +51,14 @@ public abstract class BaseActivity extends AppCompatActivity implements HttpList
         super.setContentView(mBaseView);
         initUI();
     }
+
+    @Override
+    public void setContentView(View view) {
+        addView(view);
+        super.setContentView(mBaseView);
+        initUI();
+    }
+
 
 
     @Override
@@ -239,7 +245,7 @@ public abstract class BaseActivity extends AppCompatActivity implements HttpList
         super.onResume();
         if (!isfilter) {
             if (!NetworkManager.getInstance(this).isConnected()) {
-                showEmptyView(getString(R.string.complete), R.mipmap.ic_error);
+                showEmptyView("完成", R.mipmap.ic_error);
             } else {
                 showDataView();
             }

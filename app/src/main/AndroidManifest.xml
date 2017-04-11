@@ -1,8 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.cultivator.codelibrary">
 
     <application
-        android:name=".common.MyApplication"
+        android:name=".MyApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:screenOrientation="portrait"
@@ -20,10 +21,13 @@
         </activity>
 
 
-        <activity android:name="com.google.zxing.client.android.QRActivity" />
+        <activity android:name=".activity.MyQrActivity" />
 
         <activity android:name=".activity.VibratorRingActivity"></activity>
         <activity android:name=".activity.MapNaviActivity"></activity>
+        <activity android:name=".activity.ViewDemoActivity"/>
+        <activity android:name=".activity.SignActivity"/>
+        <activity android:name=".activity.ShowImageActivity"/>
 
 
         <!--百度地图-->
@@ -34,11 +38,22 @@
             android:name="com.baidu.location.f"
             android:enabled="true"
             android:process=":remote"></service>
+
+
+
+
+
+
     </application>
 
 
     <!--震动-->
     <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!--zxing-->
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.HARDWARE_TEST"
+        tools:ignore="ProtectedPermissions" />
 
     <!--定位需要权限-->
     <!-- 这个权限用于进行网络定位-->

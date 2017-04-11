@@ -7,9 +7,9 @@ import android.widget.TextView;
 
 import com.cultivator.codelibrary.R;
 import com.cultivator.codelibrary.base.BaseActivity;
-import com.cultivator.codelibrary.common.location.MLocation;
-import com.cultivator.codelibrary.common.location.SimpleLocationResource;
-import com.cultivator.codelibrary.common.util.Utils;
+import com.cultivator.codelibrary.location.MLocation;
+import com.cultivator.codelibrary.location.SimpleLocationResource;
+import com.cultivator.codelibrary.util.Utils;
 
 
 /**

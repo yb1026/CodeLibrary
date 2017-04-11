@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import com.cultivator.codelibrary.R;
 import com.cultivator.codelibrary.base.BaseActivity;
-import com.cultivator.codelibrary.common.log.MyLog;
+import com.cultivator.codelibrary.log.MyLog;
 import com.cultivator.draggridview.DragCallback;
 import com.cultivator.draggridview.DragGridView;
 import com.cultivator.draggridview.DragGridViewAdapter;
@@ -43,9 +43,17 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.qrcode).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //去
-                startActivityForResult(new Intent(MainActivity.this, QRActivity.class), 0);
+                //去扫码
+                startActivityForResult(new Intent(MainActivity.this, MyQrActivity.class), 0);
 
+            }
+        });
+
+
+        findViewById(R.id.sign).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(SignActivity.class);
             }
         });
     }
@@ -99,13 +107,15 @@ public class MainActivity extends BaseActivity {
 
         String[] names = {
                 "音屏震动",
-                "打开地图"
+                "打开地图",
+                "自定义1"
         };
 
         ArrayList<Class> classes = new ArrayList<>();
 
         classes.add(VibratorRingActivity.class);
         classes.add(MapNaviActivity.class);
+        classes.add(ViewDemoActivity.class);
 
 
         for (int i = 0; i < names.length; i++) {

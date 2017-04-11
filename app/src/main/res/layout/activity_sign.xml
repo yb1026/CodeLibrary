@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+
+    <RelativeLayout
+        android:id="@+id/lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         >
+
+        <com.cultivator.codelibrary.widget.signature.SignatureView
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:fadeOffset="3600000"
+            android:gestureColor="@color/black"
+            android:gestureStrokeType="multiple" >
+        </com.cultivator.codelibrary.widget.signature.SignatureView>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/img_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_eb" />
+
+    <RelativeLayout
+        android:id="@+id/foot_lay"
+        android:layout_width="match_parent"
+        android:layout_height="56dip"
+        android:background="@color/color_eb"
+        android:layout_above="@id/img_view"
+        android:gravity="center" >
+        <Button
+            android:id="@+id/submit"
+            android:background="@drawable/btn_corner4dp_bgblue"
+            android:layout_width="70dip"
+            android:layout_height="40dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dip"
+            android:text="ok"
+            android:textSize="14sp"
+            android:textColor="@color/white">
+        </Button>
+
+
+        <Button
+            android:id="@+id/clear_btn"
+            android:background="@drawable/btn_corner4dp_bggray"
+            android:layout_width="70dip"
+            android:layout_height="40dip"
+            android:layout_toLeftOf="@id/submit"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="9dip"
+            android:textColor="@color/color_9"
+            android:text="重写"
+            android:textSize="14sp">
+        </Button>
+
+
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:enabled="false"
+            android:gravity="center_vertical"
+            android:layout_toLeftOf="@id/clear_btn"
+            android:lines="2"
+            android:shadowColor="@color/white"
+            android:shadowDx="0"
+            android:shadowDy="-1"
+            android:shadowRadius="1"
+            android:text="签个卖身契吧"
+            android:textColor="@color/color_9"
+            android:textSize="13dp" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/dot"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_above="@id/foot_lay"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
+        android:background="@color/color_eb" />
+
+
+    <RelativeLayout
+        android:id="@+id/prompt_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="60dp"
+        android:layout_marginTop="49dp"
+        android:gravity="center" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#00000000"
+            android:gravity="center"
+            android:shadowColor="@color/white"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:text="请在此签名"
+            android:textColor="@color/c_bbbbbb"
+            android:textSize="24dp" >
+        </TextView>
+    </RelativeLayout>
+
+</RelativeLayout>
