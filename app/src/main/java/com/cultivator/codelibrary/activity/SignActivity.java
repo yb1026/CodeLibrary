@@ -103,6 +103,7 @@ public class SignActivity extends BaseActivity {
 
             @Override
             public void onGesture(SignatureView signature, MotionEvent event) {
+                strokesNum+=1;
                 text.setText(strokesNum+"");
             }
 
@@ -152,6 +153,7 @@ public class SignActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        //signature.recycle();
     }
 
     public void signClear() {
@@ -164,7 +166,6 @@ public class SignActivity extends BaseActivity {
         signPromptLay.setVisibility(View.VISIBLE);
     }
 
-    static int count = 1;
 
     public void submit() {
 
@@ -178,11 +179,10 @@ public class SignActivity extends BaseActivity {
         Intent intent = new Intent(this, ShowImageActivity.class);
         intent.putExtra("bitmap", datas);
         startActivity(intent);
-        /**
-         * 回收位图
-         */
-        this.signature.recycle(count++ % 10 == 0);
+
     }
+
+
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {

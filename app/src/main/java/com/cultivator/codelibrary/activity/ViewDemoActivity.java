@@ -61,8 +61,10 @@ public class ViewDemoActivity extends BaseActivity {
 
             @Override
             public void comfirm(String pwd) {
+                passwordInputView.setText("");
                 passwordInputView.clearFirstInput();
                 stopAnimator();
+                ToastUtil.show(getBaseContext(), "匹配成功" + pwd);
 
             }
 
