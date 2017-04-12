@@ -9,6 +9,7 @@ import android.widget.Toast;
 import com.cultivator.codelibrary.R;
 import com.cultivator.codelibrary.base.BaseActivity;
 import com.cultivator.codelibrary.log.MyLog;
+import com.cultivator.codelibrary.util.ViewUtil;
 import com.cultivator.draggridview.DragCallback;
 import com.cultivator.draggridview.DragGridView;
 import com.cultivator.draggridview.DragGridViewAdapter;
@@ -42,9 +43,14 @@ public class MainActivity extends BaseActivity {
 
         findViewById(R.id.qrcode).setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                //去扫码
-                startActivityForResult(new Intent(MainActivity.this, MyQrActivity.class), 0);
+            public void onClick(View v) {
+                ViewUtil.setAnimationListener(v, new ViewUtil.AnimationClickListener() {
+                    @Override
+                    public void onAnimationEnd() {
+                        //去扫码
+                        startActivityForResult(new Intent(MainActivity.this, MyQrActivity.class), 0);
+                    }
+                });
 
             }
         });
@@ -53,7 +59,18 @@ public class MainActivity extends BaseActivity {
         findViewById(R.id.sign).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(SignActivity.class);
+
+
+                ViewUtil.setAnimationListener(v, new ViewUtil.AnimationClickListener() {
+                    @Override
+                    public void onAnimationEnd() {
+                        startActivity(SignActivity.class);
+                    }
+                });
+
+
+
+
             }
         });
     }

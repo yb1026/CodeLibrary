@@ -179,7 +179,7 @@ public class SignActivity extends BaseActivity {
         Intent intent = new Intent(this, ShowImageActivity.class);
         intent.putExtra("bitmap", datas);
         startActivity(intent);
-        signature.recycle();
+        signClear();
     }
 
 
