@@ -43,7 +43,7 @@ public class SignatureView extends View {
 
     private Paint mPaint = new Paint();
     private Path mPath = new Path();
-    static Bitmap mSignatureBitmap = null;
+    Bitmap mSignatureBitmap = null;
     Canvas mSignatureBitmapCanvas = null;
 
     public static interface OnGestureListener {
@@ -230,6 +230,7 @@ public class SignatureView extends View {
         if (mSignatureBitmap != null && !mSignatureBitmap.isRecycled()) {
             mSignatureBitmap.recycle();
             mSignatureBitmap = null;
+            mSignatureBitmapCanvas=null;
         }
     }
 

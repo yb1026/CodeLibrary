@@ -153,7 +153,7 @@ public class SignActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        //signature.recycle();
+        signature.recycle();
     }
 
     public void signClear() {
@@ -179,7 +179,7 @@ public class SignActivity extends BaseActivity {
         Intent intent = new Intent(this, ShowImageActivity.class);
         intent.putExtra("bitmap", datas);
         startActivity(intent);
-
+        signature.recycle();
     }
 
 
